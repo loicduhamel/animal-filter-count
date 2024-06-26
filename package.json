@@ -4,7 +4,7 @@
   "description": "CLI application to filter and count animals",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha src/test/**"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,8 @@
     "url": "https://github.com/loicduhamel/animal-filter-count/issues"
   },
   "homepage": "https://github.com/loicduhamel/animal-filter-count#readme",
-  "devDependencies": {
+  "dependencies": {
+    "chai": "^4.3.4",
     "mocha": "^10.5.1"
   }
 }

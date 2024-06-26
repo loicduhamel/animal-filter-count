@@ -1,4 +1,4 @@
-const { filterAnimalsByPattern, countAnimalsOfPeoples } = require('./src/controllers/animalController');
+const { filterAnimalsByPattern, countAnimalsOfPeoples } = require('./src/app/controllers/animalController');
 const FILTER = '--filter=';
 const COUNT = '--count';
 const SEPARATOR = '=';
@@ -11,9 +11,9 @@ if (args.length > 0) {
 
     if (arg.startsWith(FILTER)) {
         const pattern = arg.split(SEPARATOR)[1];
-        filterAnimalsByPattern(pattern);
+        console.log(JSON.stringify(filterAnimalsByPattern(pattern), null, 2));
     } else if (arg.startsWith(COUNT)) {
-        countAnimalsOfPeoples();
+        console.log(JSON.stringify(countAnimalsOfPeoples(), null, 2));
     } else {
         console.log(ERROR_MESSAGE);
     }

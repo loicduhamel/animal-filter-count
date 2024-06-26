@@ -1,10 +1,10 @@
-const { data } = require('../../resources/data');
+const { data } = require('../../../resources/data');
 
 function filterAnimals(pattern) {
     const regex = new RegExp(pattern, 'i');
-    return data.map(countrie => ({
-        ...countrie,
-        people: countrie.people.map(person => ({
+    return data.map(countries => ({
+        ...countries,
+        people: countries.people.map(person => ({
             ...person,
             animals: person.animals.filter(animal => regex.test(animal.name))
         })).filter(person => person.animals.length > 0)
@@ -12,10 +12,10 @@ function filterAnimals(pattern) {
 }
 
 function countAnimals() {
-    return data.map(countrie => ({
-        ...countrie,
-        name: `${countrie.name} [${countrie.people.length}]`,
-        people: countrie.people.map(person => ({
+    return data.map(countries => ({
+        ...countries,
+        name: `${countries.name} [${countries.people.length}]`,
+        people: countries.people.map(person => ({
             ...person,
             name: `${person.name} [${person.animals.length}]`,
             animals: person.animals
