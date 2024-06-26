@@ -1,0 +1,22 @@
+{
+  "name": "animal-filter-count",
+  "version": "1.0.0",
+  "description": "CLI application to filter and count animals",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loicduhamel/animal-filter-count.git"
+  },
+  "author": "Loïc Duhamel (https://loicduhamel.github.io/me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/loicduhamel/animal-filter-count/issues"
+  },
+  "homepage": "https://github.com/loicduhamel/animal-filter-count#readme",
+  "devDependencies": {
+    "mocha": "^10.5.1"
+  }
+}
