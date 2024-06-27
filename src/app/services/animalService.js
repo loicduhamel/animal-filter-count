@@ -1,6 +1,4 @@
-const { data } = require('../../../resources/data');
-
-function filterAnimals(pattern) {
+function filterAnimals(pattern, data) {
     const regex = new RegExp(pattern, 'i');
     return data.map(countries => ({
         ...countries,
@@ -11,7 +9,7 @@ function filterAnimals(pattern) {
     })).filter(location => location.people.length > 0);
 }
 
-function countAnimals() {
+function countAnimals(data) {
     return data.map(countries => ({
         ...countries,
         name: `${countries.name} [${countries.people.length}]`,
