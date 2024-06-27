@@ -23,6 +23,7 @@ After installation of NVM:
 - Open a terminal and go to the root of the project `cd animal-filter-count`
 - Filter: `node app.js --filter=ry` OR `node . --filter=ry`
 - Count: `node app.js --count` OR `node . --count`
+- Filter & Count: `node app.js --filter=ry --count` OR `node . --filter=ry --count`
 
 ## Unit testing
 - Run tests with command `npm test`

@@ -1,12 +1,13 @@
 const { expect } = require('chai');
 const { filterAnimals, countAnimals } = require('../../app/services/animalService');
+const {data} = require("../../../resources/data");
 
 describe('Animal Service', () => {
 
     describe('filterAnimals', () => {
         it('should filter animals correctly and result contain the pattern', () => {
             const pattern = 'ry';
-            const result = filterAnimals(pattern);
+            const result = filterAnimals(pattern, data);
 
             expect(result).not.empty;
             result.forEach(country => {
@@ -20,7 +21,7 @@ describe('Animal Service', () => {
 
         it('should return empty array when pattern not exist', () => {
             const pattern = 'patternNotExist';
-            const result = filterAnimals(pattern);
+            const result = filterAnimals(pattern, data);
 
             expect(result).empty;
         });
@@ -28,7 +29,7 @@ describe('Animal Service', () => {
 
     describe('countAnimals', () => {
         it('should count animals correctly', () => {
-            const result = countAnimals();
+            const result = countAnimals(data);
 
             expect(result).not.empty;
 
@@ -52,7 +53,7 @@ describe('Animal Service', () => {
         });
 
         it('should count animals and peoples correctly and return the correct format [n]', () => {
-            const result = countAnimals();
+            const result = countAnimals(data);
 
             result.forEach(country => {
                 const countryNameResult = country.name.match(/\[\d+]$/);

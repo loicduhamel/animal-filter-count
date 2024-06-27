@@ -3,6 +3,11 @@ const { expect } = require('chai');
 
 describe('App', () => {
 
+    it('should filter and count animals by pattern when --filter and --count options are used', () => {
+        const result = execSync('node app.js --filter=ry --count').toString();
+        expect(result).not.empty;
+    });
+
     it('should filter animals by pattern when --filter option is used', () => {
         const result = execSync('node app.js --filter=ry').toString();
         expect(result).not.empty;
